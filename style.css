@@ -1,0 +1,27 @@
+body {
+    background-color: lightseagreen;
+}
+
+#header1 {
+    display: flex;
+    justify-content: center;
+    color:white;
+    text-decoration: underline;
+}
+
+
+#start {
+    display: flex;
+    justify-content: center;
+}
+
+.startButton {
+    font-size: 20px;
+    width: 400px;
+    cursor:pointer;
+    display:block;
+}
+
+.gameStarted {
+    display:none;
+}
