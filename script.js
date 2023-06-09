@@ -176,7 +176,7 @@ var timerRunning;
 var correctAnswers = 0;
 var currentQuestionIndex = 0;
 var totalQuestions = questions.length;
-
+var initials;
 
 
 function startedGame() {
@@ -226,8 +226,13 @@ function displayQuestion(questionNumber) {
 
 function gameOverFunction() {
   questionList.style.setProperty("display", "none");
-  localStorage.setItem('High_Score', correctAnswers);
-  highScore.textContent = "High Score: " + localStorage.getItem('High_Score');
+  if(correctAnswers >= localStorage.getItem('High_Score'))
+  {
+    initials = prompt("Save your high score by entering your initials");
+    localStorage.setItem('High_Score', correctAnswers);
+    localStorage.setItem('initials', initials);
+  }
+  highScore.textContent = "High Score: " + localStorage.getItem('High_Score') + ", Initials: " + localStorage.getItem('initials');
   highScore.style.setProperty("display", "block");
 }
 
